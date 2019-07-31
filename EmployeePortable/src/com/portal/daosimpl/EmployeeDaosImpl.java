@@ -120,7 +120,7 @@ public class EmployeeDaosImpl implements EmployeeDao {
 		try (
 				Connection conn=ConnectionProvider.getDBConnection();
 				){
-				PreparedStatement ps=conn.prepareStatement("update EmployeeTab set name=?,Qualification=?,contactNo ");
+				PreparedStatement ps=conn.prepareStatement("update EmployeeTab set name=?,Qualification=?,contactNo=?,EmailAddress=? ");
 				ps.setString(1,emp.getEmployeeName());
 				ps.setString(2,emp.getGender());
 				ps.setString(3,emp.getQualification());
