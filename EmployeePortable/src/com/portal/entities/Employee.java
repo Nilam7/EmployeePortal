@@ -1,6 +1,9 @@
 package com.portal.entities;
 
-public class Employee {
+import javax.servlet.http.HttpSessionBindingEvent;
+import javax.servlet.http.HttpSessionBindingListener;
+
+public class Employee implements HttpSessionBindingListener{
 	private int employeeId;
 	private String employeeName;
 	private String gender;
@@ -9,6 +12,7 @@ public class Employee {
 	private String emailAddress;
 	private String password;
 	private String role;
+	
 	
 	public int getEmployeeId() {
 		return employeeId;
@@ -57,6 +61,20 @@ public class Employee {
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+	@Override
+	public void valueBound(HttpSessionBindingEvent e) {
+		Employee emp=(Employee)e.getValue();
+		String cNo=emp.getContactNo();
+		if(!cNo.startsWith("+91")) {
+		emp.setContactNo("+91"+cNo);	
+		}
+		
+	}
+	@Override
+	public void valueUnbound(HttpSessionBindingEvent e) {
+		
+		
 	}
 	
 }

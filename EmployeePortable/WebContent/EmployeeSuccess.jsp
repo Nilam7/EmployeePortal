@@ -9,6 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body bgcolor="cyan">
+<h3 >no of logged in : </h3>${applicationScope.counter}
+	
 <div align="center">
 <table>
 		<tr>
@@ -23,7 +25,9 @@
 		<tr>
 			<td><a href="PasswordChange.jsp">4. Change Password</a></td>
 		</tr>
-		
+		<tr>
+			<td><a href="LogOutController">5. Logout</a></td>
+		</tr>
 	</table>
 	</div>
 </body>

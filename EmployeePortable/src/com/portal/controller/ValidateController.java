@@ -24,7 +24,7 @@ public class ValidateController extends HttpServlet {
 		Employee r=daoObj.validate(empid,pass);
 		if(r!=null){
 			HttpSession session=request.getSession();
-			session.setAttribute("userObj",r);
+			session.setAttribute("counter",r);
 			if(r.getRole().equals("admin")){
 				RequestDispatcher rd=request.getRequestDispatcher("AdminSuccess.jsp");
 				rd.forward(request, response);
